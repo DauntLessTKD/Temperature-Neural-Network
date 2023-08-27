@@ -19,7 +19,6 @@ tf.get_logger().setLevel('ERROR')
 print("Welcome to a temperature calculator")
 print("\n")
 
-# Create a list of model configurations
 model_configs = [
     (celsius, kelvin),
     (celsius, farenheit),
@@ -29,10 +28,8 @@ model_configs = [
     (farenheit, kelvin)
 ]
 
-# Create a list to store the models
 models = []
 
-# Create and compile 6 different models
 for i, (input_data, output_data) in enumerate(model_configs):
     model_name = f"Model_{i+1}"
     model = tf.keras.Sequential([
@@ -51,7 +48,6 @@ for i, (input_data, output_data) in enumerate(model_configs):
 print("Please wait a little bit while the models train :D")
 print("\n")
 
-# Train each model in the list
 for i, (model, input_data, output_data) in enumerate(models):
     print(f"Training Model {i+1}")
     model.fit(input_data, output_data, epochs=500, verbose=False)
@@ -210,7 +206,6 @@ while aux_while == 0:
 
             else:
                 print("The input wasn't in the list")
-
 
     if option == 3:
         print("You choose Farenheit")
